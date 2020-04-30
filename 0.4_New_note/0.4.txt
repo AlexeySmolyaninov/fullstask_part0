@@ -1,0 +1,45 @@
+title 0.4: New note
+
+Browser->Server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+note over Server:
+Server adds a new note to the array and
+tells to Broswer to make a redirection to URL ->
+https://fullstack-exampleapp.herokuapp.com/notes
+end note
+
+Server->Browser: Redirect to https://fullstack-exampleapp.herokuapp.com/notes
+
+
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+Server->Browser: data in HTML format
+
+note over Browser:
+Broswer sees in <head> element
+that there is CSS file dependency to be retrieved
+end note
+
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+Server->Browser: main.css
+
+
+note over Browser:
+Broswer sees in <head> element
+that there is JS file dependency to be retrieved
+end note
+
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+Server->Browser: main.js
+
+note over Browser:
+JS file has a command
+which executes a call to a Server for notes data
+end note
+
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+Server->Browser: [{"content":"HTML is easy","date":"2019-05-23T17:30:31.098Z"},...]
+
+note over Browser:
+Broswer renders the data to HTML document
+end note
+
+

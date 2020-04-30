@@ -1,0 +1,13 @@
+title 0.6: New note
+
+note over Browser:
+repaint the whole <ul> element with the new note
+end note
+Browser->Server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+
+note over Server:
+Server adds a new note to the array and
+returns an object telling about the status
+end note
+Server->Browser: Status Code: 201 Created. Content: {"message":"note created"}
+

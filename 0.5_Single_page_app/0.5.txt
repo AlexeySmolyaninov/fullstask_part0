@@ -1,0 +1,31 @@
+title 0.5: Single page app
+
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
+Server->Browser: data in HTML format
+
+note over Browser:
+Broswer sees in <head> element
+that there is CSS file dependency to be retrieved
+end note
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+Server->Browser: main.css
+
+note over Browser:
+Browser sees in <head> element
+that there is JS file dependency to be retrieved
+end note
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa.js
+Server->Browser: spa.js
+
+note over Browser:
+JS file has a command
+which executes a call to a Server for a notes data
+end note
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+Server->Browser: [{"content":"HTML is easy","date":"2019-05-23T17:30:31.098Z"},...]
+
+note over Browser:
+Broswer renders the data to HTML document
+end note
+
+
